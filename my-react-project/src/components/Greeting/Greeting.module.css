@@ -1,0 +1,9 @@
+
+/* css code in a module file */
+/* creating CSS styling in a module is best practice */
+
+
+.greeting {
+    color: red;
+    font-size: 32px; 
+}

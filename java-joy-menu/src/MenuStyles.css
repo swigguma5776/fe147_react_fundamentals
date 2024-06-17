@@ -1,0 +1,14 @@
+/* Since we only are targetting 1 Component it is fine to utilize regular
+External CSS vs a module */
+
+#menu {
+    background-color: burlywood;
+    color: white; 
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid black;
+    width: 50%;
+    max-width: 500px;
+    margin: 100px auto;
+}
