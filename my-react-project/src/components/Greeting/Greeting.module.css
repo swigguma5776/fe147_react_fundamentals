@@ -1,7 +1,12 @@
+/* Key Benefit of CSS Module files is we are seperating out the CSS  
+    HOWEVER, it is still local to whatever component we import it in.
+*/
+
+
 
 /* css code in a module file */
 /* creating CSS styling in a module is best practice */
-
+/*  */
 
 .greeting {
     color: red;

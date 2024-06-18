@@ -1,12 +1,11 @@
 
 
-function Teas() {
+function Teas({teas = ['N/A']}) {
   return (
     <div>
-      <p>Green</p>
-      <p>Black</p>
-      <p>Jasmine</p>
-      <p>Chamomile</p>
+      {teas.map((tea, index) => (
+      <p key={index}>{tea}</p>
+      ))}
     </div>
   )
 }

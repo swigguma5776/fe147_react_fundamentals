@@ -1,11 +1,11 @@
 
 
-function Pastries() {
+function Pastries({ pastries = ['N/A']}) {
   return (
     <div>
-      <p>Croissant</p>
-      <p>Muffin</p>
-      <p>Danish</p>
+      {pastries.map((pastry, index) => ( 
+      <p key={index}>{pastry}</p>
+      ))}
     </div>
   )
 }
