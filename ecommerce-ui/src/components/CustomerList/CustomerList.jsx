@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react'; 
 import { useNavigate } from 'react-router-dom';
+import ListGroup from 'react-bootstrap/ListGroup';
+import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
 import axios from 'axios'; 
 // useNavigate allows us to navigate to certain Routes we have defined
 // very similar to Link however we can use this in any element
@@ -63,20 +66,40 @@ function CustomerList() {
     }
     
   return (
-    <div>
+    <Container className="border border-white rounded p-4 w-75">
       <h3>Customers</h3>
-      <ul className="lists">
+      <ListGroup>
         {customers.map( (customer) => (
-            <div key={customer.customer_id}>
-              <li onClick={ () => handleCustomerId(customer.customer_id)}>{customer.name}</li>
-              <button onClick={ () => navigate(`/edit-customers/${customer.customer_id}`)}>Edit</button>
-              <button onClick={ () => handleDeleteCustomer(customer.customer_id)}>Delete</button>
-            </div>
+            <Container key={customer.customer_id} className="mb-3">
+              <ListGroup.Item onClick={ () => handleCustomerId(customer.customer_id)} className="li rounded border mb-2">{customer.name}</ListGroup.Item>
+              <Button onClick={ () => navigate(`/edit-customers/${customer.customer_id}`)} variant="outline-info" size="sm">Edit</Button>
+              <Button onClick={ () => handleDeleteCustomer(customer.customer_id)} variant="outline-danger" size="sm" className="ms-2">Delete</Button> 
+              {/* variant attribute in Button component changes the type & color */}
+            </Container>
         ))}
-      </ul>
+      </ListGroup>
       {selectedCustomerId && <OrderList customerId={selectedCustomerId} />}
-    </div>
+    </Container>
   )
+  
+  //------------------------------WITHOUT BOOTSTRAP-------------------------
+  
+  
+  // return (
+  //   <div>
+  //     <h3>Customers</h3>
+  //     <ul className="lists">
+  //       {customers.map( (customer) => (
+  //           <div key={customer.customer_id}>
+  //             <li onClick={ () => handleCustomerId(customer.customer_id)}>{customer.name}</li>
+  //             <button onClick={ () => navigate(`/edit-customers/${customer.customer_id}`)}>Edit</button>
+  //             <button onClick={ () => handleDeleteCustomer(customer.customer_id)}>Delete</button>
+  //           </div>
+  //       ))}
+  //     </ul>
+  //     {selectedCustomerId && <OrderList customerId={selectedCustomerId} />}
+  //   </div>
+  // )
 }
 
 export default CustomerList

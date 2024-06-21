@@ -1,3 +1,4 @@
+/* commented out because of bootstrap */
 
 #app-container {
   display: flex;
@@ -11,27 +12,26 @@
 }
 
 
-.lists {
-  /* width: 100%; */
+/* .lists {
   width: 500px;
   border: 1px solid #ddd;
   padding: 20px;
   border-radius: 10px;
-}
+} */
 
-li {
+/* li {
   background-color: lightblue;
   padding: 5px;
   margin: 5px 0;
   border-radius: 4px;
   color: rgb(49,49,49);
+} */
+
+.li:hover {
+  background-color: #bbb9b9; 
 }
 
-li:hover {
-  background-color: #eaeaea; 
-}
-
-ul {
+/* ul {
   list-style-type: none;
-}
+} */
 
